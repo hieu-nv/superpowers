@@ -44,7 +44,7 @@ those, stop and ask.
 
 ## When to Use
 
-- You have a plan from superpowers:writing-plans and your human partner
+- You have a plan from superpowers:draft and your human partner
   chose inline execution at the handoff.
 - Your harness has no subagent tool (see the per-platform references in
   `../using-superpowers/references/`). Never fabricate a dispatch; run
@@ -146,7 +146,7 @@ authority the plan argues from, and conflicts inside the plan resolve
 against it. A plan with no reachable spec gets a ledger note saying so —
 rulings made without one are provisional.
 
-**REQUIRED SUB-SKILL:** load superpowers:test-driven-development now,
+**REQUIRED SUB-SKILL:** load superpowers:craft now,
 before Task 1. It governs every step of every task below; a plan whose
 steps already say "write the failing test first" does not exempt you
 from reading it.
