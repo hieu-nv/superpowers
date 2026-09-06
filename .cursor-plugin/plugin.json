@@ -16,7 +16,9 @@
     "debugging",
     "collaboration",
     "best-practices",
-    "workflows"
+    "workflows",
+    "draft",
+    "commit"
   ],
   "skills": "./skills/",
   "hooks": "./hooks/hooks-cursor.json"
