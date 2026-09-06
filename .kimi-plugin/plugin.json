@@ -16,7 +16,9 @@
     "tdd",
     "debugging",
     "code-review",
-    "workflow"
+    "workflow",
+    "draft",
+    "commit"
   ],
   "skills": "./skills/",
   "sessionStart": {

@@ -10,7 +10,9 @@
     "tdd",
     "debugging",
     "collaboration",
-    "workflow"
+    "workflow",
+    "draft",
+    "commit"
   ],
   "pi": {
     "extensions": [
