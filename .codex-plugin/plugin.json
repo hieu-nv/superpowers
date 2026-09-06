@@ -18,7 +18,10 @@
     "tdd",
     "debugging",
     "code-review",
-    "workflow"
+    "workflow",
+    "craft",
+    "draft",
+    "commit"
   ],
   "skills": "./skills/",
   "hooks": {},

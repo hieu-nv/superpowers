@@ -350,11 +350,14 @@ Superpowers is built by [Jesse Vincent](https://blog.fsck.com) and the rest of t
 
 **Collaboration** 
 - **brainstorming** - Socratic design refinement
+- **craft** - Inline plan execution: one context, one final review
+- **draft** - Refactor planning and safe sequencing before multi-file changes
 - **writing-plans** - Detailed implementation plans
 - **executing-plans** - Inline plan execution: one context, one final review
 - **dispatching-parallel-agents** - Concurrent subagent workflows
 - **requesting-code-review** - Pre-review checklist
 - **receiving-code-review** - Responding to feedback
+- **commit** - Structured Conventional Commits generator
 - **using-git-worktrees** - Parallel development branches
 - **finishing-a-development-branch** - Merge/PR decision workflow
 - **subagent-driven-development** - Fast iteration with two-stage review (spec compliance, then code quality)
