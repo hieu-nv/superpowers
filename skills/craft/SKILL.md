@@ -15,7 +15,7 @@ Before anything else, check the invocation for one of these flags (passed as `ar
 |---|---|
 | `-s` | Force SDD. Skip the Confidence Gate — dispatch to `subagent-driven-development` immediately, regardless of `confidence_score`. |
 | `-d` | Force DPA. Skip the Confidence Gate — dispatch to `dispatching-parallel-agents` immediately, regardless of `confidence_score`. |
-| `-t` | TDD-only. Skip architecture selection entirely — do not produce an `execution_plan` or pick SDD/DPA. If the request is a single coding task, invoke `superpowers:test-driven-development` directly on it. If the request mixes code and non-code work, scope TDD to only the code-touching parts and carry out the non-code parts as ordinary work — do not force TDD onto steps that don't write or modify code. |
+| `-t` | TDD-only. Skip architecture selection entirely — do not produce an `execution_plan` or pick SDD/DPA. If the request is a single coding task, invoke `superpowers:test-driven-development` directly on it. If the request mixes code and non-code work, scope TDD to only the code-touching parts and carry out the non-code parts as ordinary work — do not force TDD onto steps that don't write or modify code. As each piece of work finishes, report it done before moving to the next. |
 | `-a` / `--auto` | Auto-detect. Run the full confidence-based selection (ARCHITECTURAL PARADIGMS below, then the Confidence Gate). |
 | *(no flag given)* | Same as `-t`. |
 
@@ -61,11 +61,14 @@ Architecture selection (SDD vs DPA) governs *sequencing and dependency*, not whe
       "agent_role": "Specific role of the agent assigned to this step",
       "task_description": "Detailed description of the actionable task",
       "depends_on": [],
-      "requires_tdd_skill": true | false
+      "requires_tdd_skill": true | false,
+      "status": "pending" | "done"
     }
   ]
 }
 ```
+
+Every step starts `"status": "pending"`. Only flip a step to `"done"` after its work has actually finished — never mark a step done before its implementation (or, for non-code steps, its output) is complete.
 
 # ORCHESTRATION: NEXT-SKILL DISPATCH (Confidence Gate)
 
@@ -80,3 +83,5 @@ Producing the JSON above is not the final step — act on it immediately using t
   Pass it the `execution_plan`, and carry the Cross-Cutting TDD Rule forward: any step with `requires_tdd_skill: true` must have `superpowers:test-driven-development` enforced for that step's agent. Do not pause for permission first — the confidence threshold *is* the approval.
 
 - **`confidence_score <= 0.6`** — Do NOT auto-invoke either execution skill, and do not spawn a subagent to handle it. Instead, invoke `superpowers:test-driven-development` directly in the current session for any step in the `execution_plan` whose `requires_tdd_skill` is `true`. Do not ask the user to confirm before doing so — invoke it immediately. Show the user the JSON decision alongside this, explaining in plain terms why the confidence is borderline (grounded in the `reasoning` field — e.g. genuinely mixed/hybrid task shape, missing information about scale or dependencies).
+
+  As each step you invoked TDD for finishes, flip that step's `status` to `"done"` and show the user the updated `execution_plan` (or at minimum a one-line "step N done" note) before moving to the next step. Do this for every TDD-invoked step, not just the last one — the user should always be able to see which steps are actually finished versus still pending.
