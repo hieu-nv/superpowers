@@ -63,4 +63,7 @@ If something fails:
 - [Potential issue and mitigation]
 ```
 
-After the plan, ask: "Shall I proceed with Phase 1?"
+After the plan, ask: "Save this plan to `docs/plans/` and continue with `craft` to determine execution architecture?"
+
+- On yes: save the plan as a markdown file under `docs/plans/` (create the directory if it doesn't exist; name the file in kebab-case after the plan title, e.g. `docs/plans/refactor-auth-middleware.md`). Then invoke the `craft` skill, handing it this plan so it can decide SDD vs DPA and dispatch execution, with TDD enforced per craft's own rules.
+- On no: stop and wait for further instructions — do not save the plan or invoke `craft`.
