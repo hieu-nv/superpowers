@@ -11,64 +11,16 @@
   "capabilities": {
     "skills": [
       {
-        "id": "brainstorming",
-        "path": "skills/brainstorming/SKILL.md"
+        "id": "code-medic",
+        "path": "skills/code-medic/SKILL.md"
       },
       {
-        "id": "diagnosing-superpowers",
-        "path": "skills/diagnosing-superpowers/SKILL.md"
+        "id": "commit",
+        "path": "skills/commit/SKILL.md"
       },
       {
-        "id": "dispatching-parallel-agents",
-        "path": "skills/dispatching-parallel-agents/SKILL.md"
-      },
-      {
-        "id": "executing-plans",
-        "path": "skills/executing-plans/SKILL.md"
-      },
-      {
-        "id": "finishing-a-development-branch",
-        "path": "skills/finishing-a-development-branch/SKILL.md"
-      },
-      {
-        "id": "receiving-code-review",
-        "path": "skills/receiving-code-review/SKILL.md"
-      },
-      {
-        "id": "requesting-code-review",
-        "path": "skills/requesting-code-review/SKILL.md"
-      },
-      {
-        "id": "subagent-driven-development",
-        "path": "skills/subagent-driven-development/SKILL.md"
-      },
-      {
-        "id": "systematic-debugging",
-        "path": "skills/systematic-debugging/SKILL.md"
-      },
-      {
-        "id": "test-driven-development",
-        "path": "skills/test-driven-development/SKILL.md"
-      },
-      {
-        "id": "using-git-worktrees",
-        "path": "skills/using-git-worktrees/SKILL.md"
-      },
-      {
-        "id": "using-superpowers",
-        "path": "skills/using-superpowers/SKILL.md"
-      },
-      {
-        "id": "verification-before-completion",
-        "path": "skills/verification-before-completion/SKILL.md"
-      },
-      {
-        "id": "writing-plans",
-        "path": "skills/writing-plans/SKILL.md"
-      },
-      {
-        "id": "writing-skills",
-        "path": "skills/writing-skills/SKILL.md"
+        "id": "sync",
+        "path": "skills/sync/SKILL.md"
       }
     ],
     "commands": [],
